@@ -1,0 +1,16 @@
+[submodule "phoenix-eic-event-display"]
+	path = phoenix-eic-event-display
+	url = git@github.com:eic/phoenix-eic-event-display.git
+	branch = master
+[submodule "eic-gltf-exporter"]
+	path = eic-gltf-exporter
+	url = git@github.com:eic/root-to-gltf-exporter.git
+	branch = master
+[submodule "phoenix"]
+	path = phoenix
+	url = git@github.com:HSF/phoenix.git
+	branch = master
+[submodule "phoenix-gltf-exporter"]
+	path = phoenix-gltf-exporter
+	url = https://github.com/HSF/root_cern-To_gltf-Exporter
+	branch = master
