@@ -1,2 +1,4 @@
-# firebird
-EIC Firebird event display and debugging tool
+# Firebird
+Firebird - EIC event display and debugging tool
+
+<img src="firebird.webp"/>

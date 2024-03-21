@@ -14,3 +14,15 @@
 	path = phoenix-gltf-exporter
 	url = https://github.com/HSF/root_cern-To_gltf-Exporter
 	branch = master
+[submodule "root2cad"]
+	path = root2cad
+	url = git@github.com:eic/root2cad.git
+	branch = master
+[submodule "jsroot"]
+	path = jsroot
+	url = git@github.com:root-project/jsroot.git
+	branch = master
+[submodule "phoenix-react"]
+	path = phoenix-react
+	url = git@github.com:9inpachi/phoenix-react.git
+	branch = master

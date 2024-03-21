@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/eic-gltf-exporter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/phoenix" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/phoenix-eic-event-display" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/phoenix-gltf-exporter" vcs="Git" />
+  </component>
+</project>
