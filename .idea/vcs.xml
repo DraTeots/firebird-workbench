@@ -3,8 +3,11 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/eic-gltf-exporter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jsroot" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/phoenix" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/phoenix-eic-event-display" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/phoenix-gltf-exporter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/phoenix-react" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/root2cad" vcs="Git" />
   </component>
 </project>
