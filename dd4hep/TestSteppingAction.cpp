@@ -61,20 +61,26 @@ namespace dd4hep {
                 }
             }
 
-            void write_point(G4int run_num, G4int event_num, G4StepPoint *point, G4Track *track){
-
-                // Check we can write in file
+            /// Checks m_output_file is open and is ready for write or throws an exception
+            void ensure_output_writable() {
                 if(!m_output_file.is_open() || !m_output_file.good()) {
                     auto err_msg = fmt::format( "Failed to open the file or file stream is in a bad state. File name: '{}'", m_file_name);
                     error(err_msg.c_str());
                     throw std::runtime_error(err_msg);
                 }
+            }
 
-                auto row = fmt::format("{}, {}, {}, {}, {}, {}, {}, {}, {}",
+            void write_point(G4int run_num, G4int event_num, G4StepPoint *point, G4Track *track){
+
+                // Check we can write in file
+                ensure_output_writable();
+
+                auto row = fmt::format("{}, {}, {}, {}, \"{}\", {}, {}, {}, {}, {}",
                             run_num,
                             event_num,
                             track->GetTrackID(),
                             track->GetParticleDefinition()->GetPDGEncoding(),
+                            track->GetParticleDefinition()->GetParticleName(),
                             point->GetCharge(),
                             point->GetPosition().x(),
                             point->GetPosition().y(),
@@ -95,6 +101,9 @@ namespace dd4hep {
                 // First time in this function. Open a file
                 std::call_once(initFlag, [this, run_num, event_num, step](){
                     m_output_file = std::ofstream(m_file_name);
+
+                    ensure_output_writable();
+                    m_output_file<<"run_num,event_num,track_id,pdg,name,charge,point_x,point_y,point_z,point_t"<<std::endl;
 
                     // We always write GetPostStepPoint so the first time we have to write GetPreStepPoint
                     write_point(run_num, event_num, step->GetPreStepPoint(), step->GetTrack());
