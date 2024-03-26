@@ -38,7 +38,13 @@ export class MainDisplayComponent implements OnInit {
 
   constructor(private eventDisplay: EventDisplayService) { }
 
+
+
   ngOnInit() {
+
+
+
+
     // Create the event display configuration
     const configuration: Configuration = {
       eventDataLoader: new PhoenixLoader(),
@@ -78,7 +84,9 @@ export class MainDisplayComponent implements OnInit {
         // do something..
       }
       if ((e as KeyboardEvent).key === 'q') {
-        this.eventDisplay.loadEvent('event_1');
+        const name = `event_5x41_${Math.floor(Math.random() * 20)}`
+        console.log(name); // This will log a random index from 0 to 3
+        this.eventDisplay.loadEvent(name);
         this.eventDisplay.animateEventWithCollision(1500);
       }
       console.log((e as KeyboardEvent).key);
