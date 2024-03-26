@@ -21,7 +21,7 @@ import { PhoenixUIModule } from 'phoenix-ui-components';
 @Component({
   selector: 'app-test-experiment',
   templateUrl: './main-display.component.html',
-  imports:[BrowserAnimationsModule, PhoenixUIModule],
+  imports:[PhoenixUIModule],
   standalone: true,
   styleUrls: ['./main-display.component.scss']
 })
@@ -47,18 +47,18 @@ export class MainDisplayComponent implements OnInit {
       defaultView: [4000, 0, 4000, 0, 0 ,0],
       phoenixMenuRoot: this.phoenixMenuRoot,
       // Event data to load by default
-      defaultEventFile: {
-        // (Assuming the file exists in the `src/assets` directory of the app)
-        eventFile: 'assets/jive_xml_event_data.xml',
-        eventType: 'jivexml'
-      },
+      // defaultEventFile: {
+      //   // (Assuming the file exists in the `src/assets` directory of the app)
+      //   eventFile: 'assets/jive_xml_event_data.xml',
+      //   eventType: 'jivexml'
+      // },
     }
 
     // Initialize the event display
     this.eventDisplay.init(configuration);
 
     // Load detector geometry (assuming the file exists in the `src/assets` directory of the app)
-    this.eventDisplay.loadGLTFGeometry('assets/detector.gltf', 'Detector');
+    this.eventDisplay.loadGLTFGeometry('assets/DRICH.gltf', 'Detector');
   }
 
 }
