@@ -55,7 +55,7 @@ export class MainDisplayComponent implements OnInit {
       // Event data to load by default
       defaultEventFile: {
         // (Assuming the file exists in the `src/assets` directory of the app)
-        eventFile: 'assets/dirc_event.json.gz',
+        eventFile: 'assets/dirc_event.zip',
         eventType: 'zip'
       },
     }
