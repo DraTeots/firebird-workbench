@@ -55,7 +55,8 @@ export class MainDisplayComponent implements OnInit {
       // Event data to load by default
       defaultEventFile: {
         // (Assuming the file exists in the `src/assets` directory of the app)
-        eventFile: 'assets/herwig_18x275_5evt.json',
+        //eventFile: 'assets/herwig_18x275_5evt.json',
+        eventFile: 'assets/herwig_5x41_20evt.json',
         eventType: 'json'   // or zip
       },
     }
@@ -65,7 +66,7 @@ export class MainDisplayComponent implements OnInit {
 
     // Load detector geometry (assuming the file exists in the `src/assets` directory of the app)
     //this.eventDisplay.loadGLTFGeometry('assets/epic_full.gltf', 'Full detector', 'Central detector', 10);
-    this.eventDisplay.loadGLTFGeometry('assets/epic_full_colors.gltf', 'Full detector', 'Central detector', 10);
+    this.eventDisplay.loadGLTFGeometry('assets/epic_full_colors_vl3.gltf', 'Full detector', 'Central detector', 10);
     //this.eventDisplay.getThreeManager().getObjectByName()
 
     this.eventDisplay
