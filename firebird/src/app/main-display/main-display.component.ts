@@ -55,8 +55,8 @@ export class MainDisplayComponent implements OnInit {
       // Event data to load by default
       defaultEventFile: {
         // (Assuming the file exists in the `src/assets` directory of the app)
-        eventFile: 'assets/dirc_event.zip',
-        eventType: 'zip'
+        eventFile: 'assets/herwig_18x275_5evt.json',
+        eventType: 'json'   // or zip
       },
     }
 
@@ -65,7 +65,8 @@ export class MainDisplayComponent implements OnInit {
 
     // Load detector geometry (assuming the file exists in the `src/assets` directory of the app)
     //this.eventDisplay.loadGLTFGeometry('assets/epic_full.gltf', 'Full detector', 'Central detector', 10);
-    this.eventDisplay.loadGLTFGeometry('assets/dirc_only.gltf', 'Full detector', 'Central detector', 10);
+    this.eventDisplay.loadGLTFGeometry('assets/epic_full_colors.gltf', 'Full detector', 'Central detector', 10);
+    //this.eventDisplay.getThreeManager().getObjectByName()
 
     this.eventDisplay
       .getLoadingManager()
@@ -74,6 +75,10 @@ export class MainDisplayComponent implements OnInit {
     document.addEventListener('keydown', (e) => {
       if ((e as KeyboardEvent).key === 'Enter') {
         // do something..
+      }
+      if ((e as KeyboardEvent).key === 'q') {
+        this.eventDisplay.loadEvent('event_1');
+        this.eventDisplay.animateEventWithCollision(1500);
       }
       console.log((e as KeyboardEvent).key);
     });
