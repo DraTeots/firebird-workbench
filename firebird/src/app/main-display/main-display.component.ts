@@ -15,13 +15,13 @@
 import { Component, OnInit } from '@angular/core';
 import { EventDisplayService } from 'phoenix-ui-components';
 import { Configuration, PhoenixLoader, PresetView, ClippingSetting, PhoenixMenuNode } from 'phoenix-event-display';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { PhoenixUIModule } from 'phoenix-ui-components';
 
 @Component({
   selector: 'app-test-experiment',
   templateUrl: './main-display.component.html',
-  imports: [PhoenixUIModule, PhoenixUIModule],
+  imports: [PhoenixUIModule],
   standalone: true,
   styleUrls: ['./main-display.component.scss']
 })
@@ -55,8 +55,8 @@ export class MainDisplayComponent implements OnInit {
       // Event data to load by default
       defaultEventFile: {
         // (Assuming the file exists in the `src/assets` directory of the app)
-        eventFile: 'assets/test_event.json',
-        eventType: 'json'
+        eventFile: 'assets/dirc_event.json.gz',
+        eventType: 'zip'
       },
     }
 
@@ -64,16 +64,25 @@ export class MainDisplayComponent implements OnInit {
     this.eventDisplay.init(configuration);
 
     // Load detector geometry (assuming the file exists in the `src/assets` directory of the app)
-    this.eventDisplay.loadGLTFGeometry('assets/DRICH.gltf', 'Detector');
+    //this.eventDisplay.loadGLTFGeometry('assets/epic_full.gltf', 'Full detector', 'Central detector', 10);
+    this.eventDisplay.loadGLTFGeometry('assets/dirc_only.gltf', 'Full detector', 'Central detector', 10);
 
     this.eventDisplay
       .getLoadingManager()
       .addProgressListener((progress) => (this.loadingProgress = progress));
 
+    document.addEventListener('keydown', (e) => {
+      if ((e as KeyboardEvent).key === 'Enter') {
+        // do something..
+      }
+      console.log((e as KeyboardEvent).key);
+    });
+
     // Load the default configuration
     this.eventDisplay.getLoadingManager().addLoadListenerWithCheck(() => {
       console.log('Loading default configuration.');
       this.loaded = true;
+
     });
 
   }
