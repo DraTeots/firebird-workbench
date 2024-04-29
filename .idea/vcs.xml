@@ -3,6 +3,9 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/eic-gltf-exporter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/glTF-Sample-Viewer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/glTF-Sample-Viewer/assets/environments" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/glTF-Sample-Viewer/assets/models" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/jsroot" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/phoenix" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/phoenix-eic-event-display" vcs="Git" />

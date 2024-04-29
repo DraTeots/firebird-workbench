@@ -26,3 +26,6 @@
 	path = phoenix-react
 	url = git@github.com:9inpachi/phoenix-react.git
 	branch = master
+[submodule "glTF-Sample-Viewer"]
+	path = glTF-Sample-Viewer
+	url = git@github.com:KhronosGroup/glTF-Sample-Viewer.git
