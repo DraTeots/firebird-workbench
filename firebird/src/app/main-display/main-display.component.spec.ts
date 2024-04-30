@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MainDisplayComponent } from './main-display.component';
+import { provideRouter } from '@angular/router';
 
 describe('MainDisplayComponent', () => {
   let component: MainDisplayComponent;
@@ -8,10 +8,11 @@ describe('MainDisplayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MainDisplayComponent]
+      imports: [MainDisplayComponent],
+      providers: [provideRouter([])],
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(MainDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

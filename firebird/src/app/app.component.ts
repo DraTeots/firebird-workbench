@@ -9,5 +9,5 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'firebird';
+  title = 'Firebird';
 }
