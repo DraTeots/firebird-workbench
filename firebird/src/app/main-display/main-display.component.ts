@@ -4,6 +4,7 @@ import { Configuration, PhoenixLoader, PresetView, ClippingSetting, PhoenixMenuN
 
 import { PhoenixUIModule } from 'phoenix-ui-components';
 import { GeometryService} from '../geometry.service';
+import { Edm4hepRootEventLoader } from '../edm4hep-root-event-loader';
 
 
 @Component({
@@ -59,7 +60,14 @@ export class MainDisplayComponent implements OnInit {
     // Initialize the event display
     this.eventDisplay.init(configuration);
 
-
+    //const events_url = "https://eic.github.io/epic/artifacts/sim_dis_10x100_minQ2=1000_epic_craterlake.edm4hep.root/sim_dis_10x100_minQ2=1000_epic_craterlake.edm4hep.root"
+    //const events_url = "https://eic.github.io/epic/artifacts/sim_dis_10x100_minQ2=1000_epic_craterlake.edm4hep.root"
+    const events_url = "assets/events/sim_dis_10x100_minQ2=1000_epic_craterlake.edm4hep.root"
+    let loader = new Edm4hepRootEventLoader();
+    loader.openFile(events_url).then(value => {
+        console.log('Opened root file');
+      }
+    );
 
     let jsonGeometry;
     this.geomService.loadEicGeometry().then(jsonGeom => {
@@ -79,7 +87,8 @@ export class MainDisplayComponent implements OnInit {
     //this.eventDisplay.loadGLTFGeometry('assets/epic_full_colors_vl3.gltf', 'Full detector', 'Central detector', 10);
     //this.eventDisplay.loadGLTFGeometry('assets/DRICH.gltf', 'Full detector', 'Central detector', 10);
     //this.eventDisplay.getThreeManager().getObjectByName()
-    this.eventDisplay.getThreeManager().setAntialiasing()
+    // this.eventDisplay.getThreeManager().setAntialiasing()
+
 
   //   let name: string
   //     menuNodeName?: string,
